@@ -5,7 +5,7 @@ from django_editorjs_fields import EditorJsJSONField
 
 
 class NewsPost(models.Model):
-    NEWS_TYPE_CHOICES  = (
+    NEWS_TYPE_CHOICES = (
         ('Video yangiliklar', 'primary'),
         ('Fotolar', 'secondary'),
         ('Qonunchilik', 'triary'),
@@ -36,9 +36,10 @@ class Faculty(models.Model):
 
     def __str__(self):
         return self.name
-    
+
     class Meta:
         verbose_name_plural = 'Faculties'
+
 
 class RectorContact(models.Model):
     STATUS_CHOICES = (
@@ -64,15 +65,16 @@ class RectorContact(models.Model):
         return self.name
 
 
-class AnonymosContact(models.Model):
+class AnonymousContact(models.Model):
     text = models.TextField()
     name = models.CharField(null=True, blank=True, max_length=255)
-    phone_num_or_username = models.CharField(null=True, blank=True, max_length=255)
+    phone_num_or_username = models.CharField(
+        null=True, blank=True, max_length=255)
     email = models.EmailField(null=True, blank=True)
 
     def __str__(self):
         return self.name
-    
+
 
 class GallaryItem(models.Model):
     image = models.ImageField(upload_to='media/gallery')
@@ -81,11 +83,12 @@ class GallaryItem(models.Model):
     def __str__(self):
         return self.title
 
+
 class Gallary(models.Model):
     items = models.ManyToManyField(GallaryItem)
 
     def __str__(self):
         return self.items.__len__()
-    
+
     class Meta:
         verbose_name_plural = 'Gallaries'
