@@ -1,0 +1,692 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+<main>
+    <div class="container-fluid">
+      <div class="row" id="hero">
+        <div class="col-md-12 col-lg-4">
+          <div class="row flex-column faculties">
+            <a href="#">
+              <div class="faculty">
+                <img class="img" />
+                <span>Xorijiy filologiya yo'nalishi</span>
+              </div>
+            </a>
+            <a href="#">
+              <div class="faculty">
+                <img class="img" />
+                <span>Aniq fanlar (iqtisodiyot) yo'nalishi</span>
+              </div>
+            </a>
+            <a href="">
+              <div class="faculty">
+                <img class="img" />
+                <span>Aniq fanlar (texnika) yo'nalishi</span>
+              </div>
+            </a>
+            <a href="#">
+              <div class="faculty">
+                <img class="img" />
+                <span>Ijtimoiy-gumanitar fanlar yo'nalishi</span>
+              </div>
+            </a>
+            <a href="#">
+              <div class="faculty">
+                <img class="img" />
+                <span>Tabiiy fanlar yo'nalishi</span>
+              </div>
+            </a>
+          </div>
+          <div class="form">
+            <button class="btn btn-primary mb-2">
+              Akademik litsey direktoriga murojaat
+            </button>
+            <button class="btn btn-outline-secondary mb-2">
+              Ta'lim sifatini yaxshilash yuzasidan murojaat yo'llang
+            </button>
+            <div class="card p-2 bg-danger-subtle">
+              <p>Korrupsion holatlarga duch kelganda murojaat uchun</p>
+              <p>
+                telegram:
+                <a href="https://t.me/anddu_rektori_bot"
+                  >@anddu_rektori_bot</a
+                >
+              </p>
+              <p>
+                telefon: <a href="tel:+998742238830">+998 74 223 88 30</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-8">
+          <section class="splide" aria-label="Splide Basic HTML Example">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <img src="{% static 'assets/img/image.jpg' %}" alt="hero-image 1350x750" />
+                  <div class="info">
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Dolore, assumenda.
+                    </p>
+                  </div>
+                </li>
+                <li class="splide__slide">
+                  <img
+                    src="assets/img/image-2.jpg"
+                    alt="hero-image 1350x750"
+                  />
+                  <div class="info">
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Dolore, assumenda.
+                    </p>
+                    <span>15-Jun 2023</span>
+                  </div>
+                </li>
+                <li class="splide__slide">
+                  <img
+                    src="assets/img/image-3.png"
+                    alt="hero-image 1350x750"
+                  />
+                  <div class="info">
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Dolore, assumenda.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+      <section id="news" class="container mt-5">
+        <div class="title-text mb-5">
+          <span>So'ngi yangiliklar</span>
+        </div>
+        <div class="row g-3">
+          <div class="col-sm-12 col-md-6 col-lg-3">
+            <div class="card">
+              <svg
+                class="bd-placeholder-img card-img-top"
+                width="100%"
+                height="180"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="Placeholder: Image cap"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+              >
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#868e96"></rect>
+                <text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
+              </svg>
+              <div class="card-body">
+                <h5 class="card-title">
+                  “OBOD VA FAYZLI MAHALLA – YURT KO‘RKI” SHIORI OSTIDA
+                  O’TKAZILGAN UMUMXALQ XAYRIYA HASHARIDA UNIVERSITET OBOD
+                  BO’LDI"
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-3">
+            <div class="card">
+              <svg
+                class="bd-placeholder-img card-img-top"
+                width="100%"
+                height="180"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="Placeholder: Image cap"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+              >
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#868e96"></rect>
+                <text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
+              </svg>
+              <div class="card-body">
+                <h5 class="card-title">
+                  “OBOD VA FAYZLI MAHALLA – YURT KO‘RKI” SHIORI OSTIDA
+                  O’TKAZILGAN UMUMXALQ XAYRIYA HASHARIDA UNIVERSITET OBOD
+                  BO’LDI"
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-3">
+            <div class="card">
+              <svg
+                class="bd-placeholder-img card-img-top"
+                width="100%"
+                height="180"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="Placeholder: Image cap"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+              >
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#868e96"></rect>
+                <text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
+              </svg>
+              <div class="card-body">
+                <h5 class="card-title">
+                  “OBOD VA FAYZLI MAHALLA – YURT KO‘RKI” SHIORI OSTIDA
+                  O’TKAZILGAN UMUMXALQ XAYRIYA HASHARIDA UNIVERSITET OBOD
+                  BO’LDI"
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-3">
+            <div class="card">
+              <svg
+                class="bd-placeholder-img card-img-top"
+                width="100%"
+                height="180"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="Placeholder: Image cap"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+              >
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#868e96"></rect>
+                <text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
+              </svg>
+              <div class="card-body">
+                <h5 class="card-title">
+                  “OBOD VA FAYZLI MAHALLA – YURT KO‘RKI” SHIORI OSTIDA
+                  O’TKAZILGAN UMUMXALQ XAYRIYA HASHARIDA UNIVERSITET OBOD
+                  BO’LDI"
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-3">
+            <div class="card">
+              <svg
+                class="bd-placeholder-img card-img-top"
+                width="100%"
+                height="180"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="Placeholder: Image cap"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+              >
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#868e96"></rect>
+                <text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
+              </svg>
+              <div class="card-body">
+                <h5 class="card-title">
+                  “OBOD VA FAYZLI MAHALLA – YURT KO‘RKI” SHIORI OSTIDA
+                  O’TKAZILGAN UMUMXALQ XAYRIYA HASHARIDA UNIVERSITET OBOD
+                  BO’LDI"
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-3">
+            <div class="card">
+              <svg
+                class="bd-placeholder-img card-img-top"
+                width="100%"
+                height="180"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="Placeholder: Image cap"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+              >
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#868e96"></rect>
+                <text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
+              </svg>
+              <div class="card-body">
+                <h5 class="card-title">
+                  “OBOD VA FAYZLI MAHALLA – YURT KO‘RKI” SHIORI OSTIDA
+                  O’TKAZILGAN UMUMXALQ XAYRIYA HASHARIDA UNIVERSITET OBOD
+                  BO’LDI"
+                </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="video_news" class="container mt-5">
+        <div class="title-text mb-5">
+          <span>Video yangiliklar</span>
+        </div>
+        <div class="row g-3">
+          <div class="col-sm-12 col-md-6 col-lg-3">
+            <div class="card">
+              <svg
+                class="bd-placeholder-img card-img-top"
+                width="100%"
+                height="180"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="Placeholder: Image cap"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+              >
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#868e96"></rect>
+                <text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
+              </svg>
+              <div class="card-body">
+                <h5 class="card-title">
+                  “OBOD VA FAYZLI MAHALLA – YURT KO‘RKI” SHIORI OSTIDA
+                  O’TKAZILGAN UMUMXALQ XAYRIYA HASHARIDA UNIVERSITET OBOD
+                  BO’LDI"
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-3">
+            <div class="card">
+              <svg
+                class="bd-placeholder-img card-img-top"
+                width="100%"
+                height="180"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="Placeholder: Image cap"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+              >
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#868e96"></rect>
+                <text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
+              </svg>
+              <div class="card-body">
+                <h5 class="card-title">
+                  “OBOD VA FAYZLI MAHALLA – YURT KO‘RKI” SHIORI OSTIDA
+                  O’TKAZILGAN UMUMXALQ XAYRIYA HASHARIDA UNIVERSITET OBOD
+                  BO’LDI"
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-3">
+            <div class="card">
+              <svg
+                class="bd-placeholder-img card-img-top"
+                width="100%"
+                height="180"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="Placeholder: Image cap"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+              >
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#868e96"></rect>
+                <text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
+              </svg>
+              <div class="card-body">
+                <h5 class="card-title">
+                  “OBOD VA FAYZLI MAHALLA – YURT KO‘RKI” SHIORI OSTIDA
+                  O’TKAZILGAN UMUMXALQ XAYRIYA HASHARIDA UNIVERSITET OBOD
+                  BO’LDI"
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-3">
+            <div class="card">
+              <svg
+                class="bd-placeholder-img card-img-top"
+                width="100%"
+                height="180"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="Placeholder: Image cap"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+              >
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#868e96"></rect>
+                <text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
+              </svg>
+              <div class="card-body">
+                <h5 class="card-title">
+                  “OBOD VA FAYZLI MAHALLA – YURT KO‘RKI” SHIORI OSTIDA
+                  O’TKAZILGAN UMUMXALQ XAYRIYA HASHARIDA UNIVERSITET OBOD
+                  BO’LDI"
+                </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="law_news" class="container mt-5">
+        <div class="title-text mb-5">
+          <span>Qonunchilikdagi yangiliklar</span>
+        </div>
+        <div class="row g-3">
+          <div class="col-sm-12 col-md-6 col-lg-3">
+            <div class="card">
+              <svg
+                class="bd-placeholder-img card-img-top"
+                width="100%"
+                height="180"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="Placeholder: Image cap"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+              >
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#868e96"></rect>
+                <text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
+              </svg>
+              <div class="card-body">
+                <h5 class="card-title">
+                  “OBOD VA FAYZLI MAHALLA – YURT KO‘RKI” SHIORI OSTIDA
+                  O’TKAZILGAN UMUMXALQ XAYRIYA HASHARIDA UNIVERSITET OBOD
+                  BO’LDI"
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-3">
+            <div class="card">
+              <svg
+                class="bd-placeholder-img card-img-top"
+                width="100%"
+                height="180"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="Placeholder: Image cap"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+              >
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#868e96"></rect>
+                <text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
+              </svg>
+              <div class="card-body">
+                <h5 class="card-title">
+                  “OBOD VA FAYZLI MAHALLA – YURT KO‘RKI” SHIORI OSTIDA
+                  O’TKAZILGAN UMUMXALQ XAYRIYA HASHARIDA UNIVERSITET OBOD
+                  BO’LDI"
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-3">
+            <div class="card">
+              <svg
+                class="bd-placeholder-img card-img-top"
+                width="100%"
+                height="180"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="Placeholder: Image cap"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+              >
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#868e96"></rect>
+                <text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
+              </svg>
+              <div class="card-body">
+                <h5 class="card-title">
+                  “OBOD VA FAYZLI MAHALLA – YURT KO‘RKI” SHIORI OSTIDA
+                  O’TKAZILGAN UMUMXALQ XAYRIYA HASHARIDA UNIVERSITET OBOD
+                  BO’LDI"
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-3">
+            <div class="card">
+              <svg
+                class="bd-placeholder-img card-img-top"
+                width="100%"
+                height="180"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="Placeholder: Image cap"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+              >
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#868e96"></rect>
+                <text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
+              </svg>
+              <div class="card-body">
+                <h5 class="card-title">
+                  “OBOD VA FAYZLI MAHALLA – YURT KO‘RKI” SHIORI OSTIDA
+                  O’TKAZILGAN UMUMXALQ XAYRIYA HASHARIDA UNIVERSITET OBOD
+                  BO’LDI"
+                </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="talenteds_news" class="container mt-5">
+        <div class="title-text mb-5">
+          <span>Iqtidorli talabalar</span>
+        </div>
+        <div class="row g-3">
+          <div class="col-sm-12 col-md-6 col-lg-3">
+            <div class="card">
+              <svg
+                class="bd-placeholder-img card-img-top"
+                width="100%"
+                height="180"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="Placeholder: Image cap"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+              >
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#868e96"></rect>
+                <text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
+              </svg>
+              <div class="card-body">
+                <h5 class="card-title">
+                  “OBOD VA FAYZLI MAHALLA – YURT KO‘RKI” SHIORI OSTIDA
+                  O’TKAZILGAN UMUMXALQ XAYRIYA HASHARIDA UNIVERSITET OBOD
+                  BO’LDI"
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-3">
+            <div class="card">
+              <svg
+                class="bd-placeholder-img card-img-top"
+                width="100%"
+                height="180"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="Placeholder: Image cap"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+              >
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#868e96"></rect>
+                <text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
+              </svg>
+              <div class="card-body">
+                <h5 class="card-title">
+                  “OBOD VA FAYZLI MAHALLA – YURT KO‘RKI” SHIORI OSTIDA
+                  O’TKAZILGAN UMUMXALQ XAYRIYA HASHARIDA UNIVERSITET OBOD
+                  BO’LDI"
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-3">
+            <div class="card">
+              <svg
+                class="bd-placeholder-img card-img-top"
+                width="100%"
+                height="180"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="Placeholder: Image cap"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+              >
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#868e96"></rect>
+                <text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
+              </svg>
+              <div class="card-body">
+                <h5 class="card-title">
+                  “OBOD VA FAYZLI MAHALLA – YURT KO‘RKI” SHIORI OSTIDA
+                  O’TKAZILGAN UMUMXALQ XAYRIYA HASHARIDA UNIVERSITET OBOD
+                  BO’LDI"
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-3">
+            <div class="card">
+              <svg
+                class="bd-placeholder-img card-img-top"
+                width="100%"
+                height="180"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="Placeholder: Image cap"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+              >
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#868e96"></rect>
+                <text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
+              </svg>
+              <div class="card-body">
+                <h5 class="card-title">
+                  “OBOD VA FAYZLI MAHALLA – YURT KO‘RKI” SHIORI OSTIDA
+                  O’TKAZILGAN UMUMXALQ XAYRIYA HASHARIDA UNIVERSITET OBOD
+                  BO’LDI"
+                </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="e_books" class="container mt-5">
+        <div class="title-text mb-5">
+          <span>Elektron resurslar</span>
+        </div>
+        <div class="row g-3">
+          <div class="col-sm-12 col-md-6 col-lg-3">
+            <div class="card">
+              <svg
+                class="bd-placeholder-img card-img-top"
+                width="100%"
+                height="180"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="Placeholder: Image cap"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+              >
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#868e96"></rect>
+                <text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
+              </svg>
+              <div class="card-body">
+                <h5 class="card-title">
+                  “OBOD VA FAYZLI MAHALLA – YURT KO‘RKI” SHIORI OSTIDA
+                  O’TKAZILGAN UMUMXALQ XAYRIYA HASHARIDA UNIVERSITET OBOD
+                  BO’LDI"
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-3">
+            <div class="card">
+              <svg
+                class="bd-placeholder-img card-img-top"
+                width="100%"
+                height="180"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="Placeholder: Image cap"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+              >
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#868e96"></rect>
+                <text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
+              </svg>
+              <div class="card-body">
+                <h5 class="card-title">
+                  “OBOD VA FAYZLI MAHALLA – YURT KO‘RKI” SHIORI OSTIDA
+                  O’TKAZILGAN UMUMXALQ XAYRIYA HASHARIDA UNIVERSITET OBOD
+                  BO’LDI"
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-3">
+            <div class="card">
+              <svg
+                class="bd-placeholder-img card-img-top"
+                width="100%"
+                height="180"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="Placeholder: Image cap"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+              >
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#868e96"></rect>
+                <text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
+              </svg>
+              <div class="card-body">
+                <h5 class="card-title">
+                  “OBOD VA FAYZLI MAHALLA – YURT KO‘RKI” SHIORI OSTIDA
+                  O’TKAZILGAN UMUMXALQ XAYRIYA HASHARIDA UNIVERSITET OBOD
+                  BO’LDI"
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-3">
+            <div class="card">
+              <svg
+                class="bd-placeholder-img card-img-top"
+                width="100%"
+                height="180"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="Placeholder: Image cap"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+              >
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#868e96"></rect>
+                <text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text>
+              </svg>
+              <div class="card-body">
+                <h5 class="card-title">
+                  “OBOD VA FAYZLI MAHALLA – YURT KO‘RKI” SHIORI OSTIDA
+                  O’TKAZILGAN UMUMXALQ XAYRIYA HASHARIDA UNIVERSITET OBOD
+                  BO’LDI"
+                </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  {% endblock content %}
