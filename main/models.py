@@ -76,7 +76,7 @@ class AnonymousContact(models.Model):
         return self.name
 
 
-class GallaryItem(models.Model):
+class GalleryItem(models.Model):
     image = models.ImageField(upload_to='media/gallery')
     summary = models.CharField(max_length=255)
 
@@ -84,8 +84,8 @@ class GallaryItem(models.Model):
         return self.title
 
 
-class Gallary(models.Model):
-    items = models.ManyToManyField(GallaryItem)
+class Gallery(models.Model):
+    items = models.ManyToManyField(GalleryItem)
 
     def __str__(self):
         return self.items.__len__()
