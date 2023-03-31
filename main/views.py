@@ -1,12 +1,20 @@
 from django.shortcuts import render, redirect
 from . import models
 from django.contrib import messages
-from . import forms 
+from . import forms
 
 
 def index(request):
     news_posts = models.NewsPost.objects.all()
-    return render(request, 'main/index.html', {"news_posts": news_posts})
+    primary, secondary, triatery = [], [], []
+    for post in news_posts:
+        if post.news_type == 'primary':
+            primary.append(post)
+        elif post.news_type == 'secondary':
+            secondary.append(post)
+        elif post.news_type == 'triary':
+            triatery.append(post)
+    return render(request, 'main/index.html', {"news_posts": news_posts, "primary": primary, "secondary": secondary, "triary": triatery})
 
 
 def all_news(request):

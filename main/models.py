@@ -13,6 +13,7 @@ class NewsPost(models.Model):
     title = models.CharField(max_length=255)
     little_image = models.ImageField(upload_to="media/news_post/")
     big_image = models.ImageField(upload_to='media/news_post/')
+    video = models.FileField(upload_to='media/news_post/', blank=True, null=True)
     news_type = models.CharField(choices=NEWS_TYPE_CHOICES, max_length=255)
     body = QuillField()
 
@@ -39,6 +40,18 @@ class Faculty(models.Model):
 
     class Meta:
         verbose_name_plural = 'Faculties'
+
+class TalentedStudent(models.Model):
+    name = models.CharField(max_length=255)
+    img = models.ImageField(upload_to='media/talented_students')
+    phone_number = models.CharField(max_length=255)
+    biography = QuillField()
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = 'Talented Students'
 
 
 class RectorContact(models.Model):
@@ -100,6 +113,7 @@ class Gallery(models.Model):
 class UsefulResources(models.Model):
     title = models.CharField(max_length=255)
     file = models.FileField(upload_to='media/useful_resources')
+    img = models.ImageField(upload_to='media/useful_resources', blank=True, null=True)
     link = models.URLField(blank=True, null=True)
     summary = models.CharField(max_length=255)
 
