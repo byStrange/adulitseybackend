@@ -1,20 +1,20 @@
 from django.db import models
-from django_editorjs_fields import EditorJsJSONField
+from django_quill.fields import QuillField
 
 # Create your models here.
 
 
 class NewsPost(models.Model):
     NEWS_TYPE_CHOICES = (
-        ('Video yangiliklar', 'primary'),
-        ('Fotolar', 'secondary'),
-        ('Qonunchilik', 'triary'),
+        ('primary', 'Video'),
+        ('secondary', 'Foto'),
+        ('triary', 'Qonunchilik'),
     )
     title = models.CharField(max_length=255)
     little_image = models.ImageField(upload_to="media/news_post/")
     big_image = models.ImageField(upload_to='media/news_post/')
-    body = EditorJsJSONField()
     news_type = models.CharField(choices=NEWS_TYPE_CHOICES, max_length=255)
+    body = QuillField()
 
     def __str__(self):
         return self.title
@@ -24,7 +24,7 @@ class Person(models.Model):
     name = models.CharField(max_length=255)
     img = models.ImageField(upload_to='media/person_pictures')
     phone_number = models.CharField(max_length=255)
-    biography = EditorJsJSONField()
+    biography = QuillField()
 
     def __str__(self):
         return self.name
@@ -60,6 +60,8 @@ class RectorContact(models.Model):
     address = models.CharField(max_length=255)
     phone_num_or_username = models.CharField(max_length=255)
     status = models.CharField(choices=STATUS_CHOICES, max_length=255)
+    contact_type = models.CharField(
+        choices=CONTACT_TYPE_CHOICES, max_length=255)
 
     def __str__(self):
         return self.name

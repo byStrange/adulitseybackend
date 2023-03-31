@@ -1,0 +1,134 @@
+
+{% extends 'main/base.html' %}
+{% block content %}
+
+    <section id="contact" class="container bg-body">
+      <div class="title-text text-center mt-2">
+        <span>Rektorga murojaat</span>
+      </div>
+      <form class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="mt-3">
+            <label for="summary">Murojaat mamuni</label>
+            <div class="input-group">
+              <textarea
+                name="summary"
+                id="summary"
+                cols="30"
+                rows="5"
+                class="form-control"
+              ></textarea>
+            </div>
+          </div>
+          <div class="mt-3">
+            <label for="report">Murojaat matni</label>
+            <div class="input-group">
+              <textarea
+                name="report"
+                id="report"
+                cols="30"
+                rows="20"
+                class="form-control"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="mt-3">
+            <label for="name">Familiya</label>
+            <div class="input-group">
+              <input type="text" class="form-control" />
+            </div>
+          </div>
+          <div class="mt-3">
+            <label for="surname">Familiya</label>
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                name="surname"
+                id="surname"
+              />
+            </div>
+          </div>
+          <div class="mt-3">
+            <label for="name">Ism</label>
+            <div class="input-group">
+              <input type="text" class="form-control" id="name" name="name" />
+            </div>
+          </div>
+          <div class="mt-3">
+            <label for="current_location">Yashash manzilingiz</label>
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                id="current_location"
+                name="current_location"
+              />
+            </div>
+          </div>
+          <div class="mt-3">
+            <label for="contact"
+              >Telefon yoki telegram foydalanuvchi nomi</label
+            >
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                id="contact"
+                name="contact"
+              />
+            </div>
+            <span class="text-muted"
+              ><i>+998 xx xxx xx xx</i>; <i>@username</i></span
+            >
+          </div>
+          <div class="mt-3">
+            <label for="current_location">Sizning maqomingiz</label>
+            <div class="input-group">
+              <select name="status" id="status" class="form-control">
+                <option value="js">Jismoniy shaxs</option>
+                <option value="ys">Yuridik shaxs</option>
+              </select>
+            </div>
+          </div>
+          <div class="mt-3">
+            <label for="type_of_contact">Murojaatning turi</label>
+            <div class="input-group">
+              <select
+                class="form-control"
+                id="type_of_contact"
+                name="type_of_contact"
+              >
+                <option value="appeal" selected>Murojaat</option>
+                <option value="complaint">Shikoyat</option>
+                <option value="suggestion">Taklif</option>
+              </select>
+            </div>
+          </div>
+          <div class="mt-3">
+            <label for="captcha">Rasmadagi matnni kiriting</label>
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                id="captcha"
+                name="captcha"
+              />
+            </div>
+            <canvas
+              id="captchaCanvas"
+              width="200"
+              class="mt-1"
+              height="30"
+            ></canvas>
+          </div>
+          <div class="mt-3">
+            <button type="submit" class="btn btn-primary">Yuborish</button>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    {% endblock %}

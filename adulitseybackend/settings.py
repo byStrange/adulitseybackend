@@ -25,7 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
-    'django_editorjs_fields'
+    'django_quill'
 ]
 
 MIDDLEWARE = [

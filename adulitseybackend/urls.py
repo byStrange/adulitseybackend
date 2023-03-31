@@ -7,7 +7,6 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
-    path('editorjs/', include('django_editorjs_fields.urls')),
 ]
 
 

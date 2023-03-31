@@ -17,8 +17,7 @@
       id="navbar"
       style="
         background-color: rgba(255, 255, 255, 0.8);
-        backdrop-filter: saturate(180%) blur(20px);
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
       "
     >
       <div class="container-fluid lg-justify-content-center">
@@ -79,12 +78,12 @@
               >
               <ul class="dropdown-menu">
                 <li>
-                  <a class="dropdown-item" href="schedule.html"
+                  <a class="dropdown-item" href="{% url 'main:contact' %}"
                     >Direktorga murojaat</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="schedule.html"
+                  <a class="dropdown-item" href="{% url 'main:contact_anonym' %}"
                     >Anonim murojaat</a
                   >
                 </li>
@@ -118,10 +117,10 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a href="gallery.html" class="nav-link">Fotogalareya</a>
+              <a href="" class="nav-link">Fotogalareya</a>
             </li>
             <li class="nav-item">
-              <a href="all_news.html" class="nav-link">Yangiliklar</a>
+              <a href="{% url 'main:all_news'%}" class="nav-link">Yangiliklar</a>
             </li>
           </ul>
         </div>

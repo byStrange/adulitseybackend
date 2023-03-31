@@ -1,17 +1,17 @@
 {% extends 'main/base.html' %} 
-{% load editorjs %} {% block content %}
+ {% block content %}
 <section class="container bg-body" id="adminstration">
   <div class="title-text text-center mt-2">
     <span>{{ post.title }}</span>
   </div>
   <div class="image">
     <center>
-      <img src="{{ post.big_image.url }}" alt="" />
+      <img src="{{ post.big_image.url }}" alt="{{post.title}}" style="max-width: 100%" />
     </center>
   </div>
   <div class="content">
-    {{ post.body | editorjs }}
+    {{ post.body.html|safe }}
   </div>
 </section>
-
-{% endblock %} {% block title %} {{ post.title }} {% endblock title %}
+{% endblock%}
+{% comment %} {% endblock %} {% block title %} {{ post.title }} {% endblock title %} {% endcomment %}

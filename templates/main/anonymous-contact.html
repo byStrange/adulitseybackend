@@ -1,0 +1,45 @@
+{% extends 'main/base.html' %} {% block content %}
+<section id="contact" class="container bg-body">
+  <div class="title-text text-center mt-2">
+    <span>Anonim murojaat</span>
+  </div>
+  <form>
+    <div class="mt-3">
+      <label for="text">Murojaatingiz</label>
+      <div class="input-group">
+        <textarea class="form-control" id="text" rows="12" cols="9"></textarea>
+      </div>
+    </div>
+    <div class="mt-3">
+      <label for="name"
+        >Ismingiz <span class="text-muted">(ixtiyoriy)</span></label
+      >
+      <div class="input-group">
+        <input type="text" class="form-control" id="name" />
+      </div>
+    </div>
+    <div class="mt-3">
+      <label for="contact"
+        >Telefon yoki telegram foydalanuvchi nomi
+        <span class="text-muted">(ixtiyoriy)</span></label
+      >
+      <div class="input-group">
+        <input type="text" class="form-control" id="contact" name="contact" />
+      </div>
+      <span class="text-muted"><i>+998 xx xxx xx xx</i>; <i>@username</i></span>
+    </div>
+    <div class="mt-3">
+      <label for="email"
+        >Email <span class="text-muted">(ixtiyoriy)</span></label
+      >
+      <div class="input-group">
+        <input type="email" class="form-control" id="email" name="email" />
+      </div>
+    </div>
+    <div class="mt-3">
+      <button type="submit" class="btn btn-primary">Yuborish</button>
+    </div>
+  </form>
+</section>
+
+{% endblock %}
