@@ -56,37 +56,22 @@
         <section class="splide" aria-label="Splide Basic HTML Example">
           <div class="splide__track">
             <ul class="splide__list">
+              {% for post in news_posts|slice:':3'%}
               <li class="splide__slide">
                 <img
-                  src="{% static 'assets/img/image.jpg' %}"
+                  src="{{ post.big_image.url }}"
                   alt="hero-image 1350x750"
+                  style="max-width: 100%"
                 />
                 <div class="info">
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Dolore, assumenda.
+                    <a href="{% url 'main:single_post' post.id %}"
+                      >{{ post.title }}</a
+                    >
                   </p>
                 </div>
               </li>
-              <li class="splide__slide">
-                <img src="assets/img/image-2.jpg" alt="hero-image 1350x750" />
-                <div class="info">
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Dolore, assumenda.
-                  </p>
-                  <span>15-Jun 2023</span>
-                </div>
-              </li>
-              <li class="splide__slide">
-                <img src="assets/img/image-3.png" alt="hero-image 1350x750" />
-                <div class="info">
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Dolore, assumenda.
-                  </p>
-                </div>
-              </li>
+              {% endfor %}
             </ul>
           </div>
         </section>

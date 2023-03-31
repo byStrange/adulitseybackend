@@ -23,10 +23,13 @@ def single_news_post(request, pk):
 def contact(request):
     if request.method == 'POST':
         contactForm = forms.RectorContactForm(request.POST)
+        print(contactForm.errors)
         if contactForm.is_valid():
+            print(contactForm.cleaned_data, 'cleaned data')
             contactForm.save()
             messages.success(request, 'Sizning murojaatingiz qabul qilindi')
         else:
+            print(contactForm.errors, 'Xatolik yuz berdi')
             messages.error(request, 'Xatolik yuz berdi')
             return redirect('main:contact')
     return render(request, 'main/contact.html')
@@ -35,11 +38,10 @@ def contact(request):
 def contact_anonym(request):
     if request.method == 'POST':
         print(request.POST)
-        models.AnonymousContact.objects.create(
-            text=request.POST['text'],
-            name=request.POST['name'],
-            phone_num_or_username=request.POST['phone_num_or_username'],
-            email=request.POST['email']
-        )
-        messages.success(request, 'Sizning murojaatingiz qabul qilindi')
+        contactForm = forms.AnonymousContactForm(request.POST)
+        if contactForm.is_valid():
+            contactForm.save()
+            messages.success(request, 'Sizning murojaatingiz qabul qilindi')
+        else:
+            print(contactForm.errors)
     return render(request, 'main/anonymous-contact.html')

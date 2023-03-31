@@ -43,14 +43,15 @@ class Faculty(models.Model):
 
 class RectorContact(models.Model):
     STATUS_CHOICES = (
-        ('Jismoniy shaxs', 'js'),
-        ('Yuridik shaxs', 'ys')
+        ('js', 'Jismoniy shaxs'),
+        ('ys', 'Yuridik shaxs')
+
     )
 
     CONTACT_TYPE_CHOICES = (
-        ('Murojaat', 'm'),
-        ('Shikoyat', 'sh'),
-        ('Taklif', 't')
+        ('m', 'Murojaat'),
+        ('sh', 'Shikoyat'),
+        ('t', 'Taklif')
     )
     summary = models.CharField(max_length=500)
     text = models.TextField()
@@ -94,3 +95,16 @@ class Gallery(models.Model):
 
     class Meta:
         verbose_name_plural = 'Gallaries'
+
+
+class UsefulResources(models.Model):
+    title = models.CharField(max_length=255)
+    file = models.FileField(upload_to='media/useful_resources')
+    link = models.URLField(blank=True, null=True)
+    summary = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = 'Useful Resources'
