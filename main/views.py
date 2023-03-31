@@ -14,7 +14,19 @@ def index(request):
             secondary.append(post)
         elif post.news_type == 'triary':
             triatery.append(post)
-    return render(request, 'main/index.html', {"news_posts": news_posts, "primary": primary, "secondary": secondary, "triary": triatery})
+
+    useful_resources = models.UsefulResources.objects.all()
+    talanted_students = models.TalentedStudent.objects.all()
+
+    objects = {
+        "news_posts": news_posts,
+        "primary": primary,
+        "secondary": secondary,
+        "triary": triatery,
+        "useful_resources": useful_resources,
+        "talanted_students": talanted_students
+    }
+    return render(request, 'main/index.html', objects)
 
 
 def all_news(request):

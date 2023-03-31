@@ -6,7 +6,13 @@
   </div>
   <div class="image">
     <center>
+      {% if post.news_type == 'secondary'%}
       <img src="{{ post.big_image.url }}" alt="{{post.title}}" style="max-width: 100%" />
+      {% elif post.news_type == 'primary' %}
+      <video controls style="max-width: 100%">
+        <source src="{{ post.video.url }}" type="{{ post.video.type }}">
+      </video>
+      {% endif %}
     </center>
   </div>
   <div class="content">

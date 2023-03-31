@@ -103,9 +103,9 @@
       <div class="row g-3">
         {% for post in primary %}
         <div class="col-sm-12 col-md-6 col-lg-3">
-          <a href="{%url 'main:news' post.id %}">
+          <a href="{% url 'main:single_post' post.id %}">
             <div class="card">
-              <img src="{% url post.little_image.url %}" />
+              <img src="{{ post.little_image.url }}" />
               <div class="card-body">
                 <h5 class="card-title">{{ post.title }}</h5>
               </div>
@@ -123,9 +123,9 @@
       <div class="row g-3">
         {% for post in triary %}
         <div class="col-sm-12 col-md-6 col-lg-3">
-          <a href="{%url 'main:news' post.id %}">
+          <a href="{%url 'main:single_post' post.id %}">
             <div class="card">
-              <img src="{% url post.little_image.url %}" />
+              <img src="{{ post.little_image.url }}" />
               <div class="card-body">
                 <h5 class="card-title">{{ post.title }}</h5>
               </div>
@@ -161,14 +161,13 @@
       <div class="row g-3">
         {% for file in useful_resources %}
         <div class="col-sm-12 col-md-6 col-lg-3">
-          <a href="{%url 'main:news' file.id %}">
-            <div class="card">
-              <img src="{% url file.img.url %}" />
-              <div class="card-body">
-                <h5 class="card-title">{{ file.title }}</h5>
-              </div>
+          <div class="card">
+            <img src="{{ file.img.url }}" />
+            <div class="card-body">
+              <h5 class="card-title">{{ file.title }}</h5>
+              <button class="btn btn-mini btn-primary mt-1">Yuklab olish</button>
             </div>
-          </a>
+          </div>
         </div>
         {% endfor %}
       </div>
