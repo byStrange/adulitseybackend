@@ -1,0 +1,29 @@
+{% extends 'main/base.html'%}
+{% block content %}
+
+<section id="news" class="container mt-5">
+  <div class="title-text mb-5">
+    <span>Barcha Elektron resurslar</span>
+  </div>
+  <div class="row g-3">
+    {% for file in resources %}
+    <div class="col-sm-12 col-md-6 col-lg-3">
+      <div class="card">
+        <img src="{{ file.img.url }}" />
+        <div class="card-body">
+          <a href="{{file.file.url}}" class="text-black ">
+            <h5 class="card-title">{{ file.title }}</h5>
+          </a>
+          <a class="btn btn-primary mt-2 float-end" href="{{ file.file.url }}" download
+            >Yuklab olish</a
+          >
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock %} {% block title %}
+<title>Barcha Elektron resources</title>
+{% endblock title %}

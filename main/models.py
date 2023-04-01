@@ -16,6 +16,7 @@ class NewsPost(models.Model):
     video = models.FileField(upload_to='media/news_post/', blank=True, null=True)
     news_type = models.CharField(choices=NEWS_TYPE_CHOICES, max_length=255)
     body = QuillField()
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.title
@@ -42,13 +43,13 @@ class Faculty(models.Model):
         verbose_name_plural = 'Faculties'
 
 class TalentedStudent(models.Model):
-    name = models.CharField(max_length=255)
+    fullname = models.CharField(max_length=255)
     img = models.ImageField(upload_to='media/talented_students')
     phone_number = models.CharField(max_length=255)
     biography = QuillField()
 
     def __str__(self):
-        return self.name
+        return self.fullname
 
     class Meta:
         verbose_name_plural = 'Talented Students'

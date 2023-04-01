@@ -17,6 +17,10 @@ def index(request):
 
     useful_resources = models.UsefulResources.objects.all()
     talanted_students = models.TalentedStudent.objects.all()
+    faculties = models.Faculty.objects.all()
+
+    for i in talanted_students:
+        print(i)
 
     objects = {
         "news_posts": news_posts,
@@ -24,14 +28,22 @@ def index(request):
         "secondary": secondary,
         "triary": triatery,
         "useful_resources": useful_resources,
-        "talanted_students": talanted_students
+        "talanted_students": talanted_students,
+        "faculties": faculties
     }
     return render(request, 'main/index.html', objects)
 
 
 def all_news(request):
+    news_type = request.GET.get('type')
     news = models.NewsPost.objects.all()
+    if news_type:
+        news = news.filter(news_type=news_type)        
     return render(request, 'main/all_news.html', {"news_posts": news})
+
+def all_resourses(request):
+    resourses = models.UsefulResources.objects.all()
+    return render(request, 'main/all_resourses.html', {'resourses': resourses})
 
 
 def single_news_post(request, pk):
@@ -65,3 +77,18 @@ def contact_anonym(request):
         else:
             print(contactForm.errors)
     return render(request, 'main/anonymous-contact.html')
+
+
+def faculty_view(request, pk):
+    faculty = models.Faculty.objects.get(pk=pk)
+    return render(request, 'main/faculty.html', {"faculty": faculty})
+
+
+def best_students(request):
+    students = models.TalentedStudent.objects.all()
+    return render(request, 'main/best_students.html', {"students": students})
+
+
+def best_student(request, pk):
+    student = models.TalentedStudent.objects.get(pk=pk)
+    return render(request, 'main/best_student.html', {"student": student})

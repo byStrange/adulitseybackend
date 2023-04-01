@@ -110,7 +110,7 @@
                   <a href="block-test.html" class="dropdown-item">Blok test</a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="resources.html"
+                  <a class="dropdown-item" href="{% url 'main:all_resourses' %}"
                     >Foydali resurslar</a
                   >
                 </li>
@@ -173,7 +173,7 @@
                 <a href="#" class="nav-link p-0 text-muted">Blok test</a>
               </li>
               <li class="nav-item mb-2">
-                <a href="#" class="nav-link p-0 text-muted"
+                <a href="{% url 'main:all_resourses' %}" class="nav-link p-0 text-muted"
                   >Foydali resurslar</a
                 >
               </li>
@@ -183,10 +183,10 @@
           <div class="col-6 col-md-2 mb-3">
             <ul class="nav flex-column">
               <li class="nav-item mb-2">
-                <a href="#" class="nav-link p-0 text-muted">Bog'lanish</a>
+                <a href="{% url 'main:contact_anonym' %}" class="nav-link p-0 text-muted">Bog'lanish</a>
               </li>
               <li class="nav-item mb-2">
-                <a href="#" class="nav-link p-0 text-muted">Yangiliklar</a>
+                <a href="{% url 'main:all_news' %}" class="nav-link p-0 text-muted">Yangiliklar</a>
               </li>
               <li class="nav-item mb-2">
                 <a href="#" class="nav-link p-0 text-muted">Fotogalareya</a>

@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<section id="news" class="container mt-5">
+    <div class="title-text mb-5">
+      <span>Iqtidorli o'quvchilar</span>
+    </div>
+    <div class="row g-3">
+      {% for student in students %}
+      <div class="col-sm-12 col-md-6 col-lg-3">
+        <a href="{% url 'main:best_student' student.id %}">
+          <div class="card" style="overflow: hidden">
+            <img src="{{ student.img.url }}">
+            <div class="card-body">
+              <h5 class="card-title">
+                {{ student.fullname }}
+              </h5>
+            </div>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}

@@ -4,36 +4,14 @@
     <div class="row" id="hero">
       <div class="col-md-12 col-lg-4">
         <div class="row flex-column faculties">
-          <a href="#">
+          {% for faculty in faculties %} 
+          <a href="{% url 'main:faculty' faculty.id%}">
             <div class="faculty">
-              <img class="img" />
-              <span>Xorijiy filologiya yo'nalishi</span>
+              <img class="img" alt="" />
+              <span>{{ faculty.name }}</span>
             </div>
           </a>
-          <a href="#">
-            <div class="faculty">
-              <img class="img" />
-              <span>Aniq fanlar (iqtisodiyot) yo'nalishi</span>
-            </div>
-          </a>
-          <a href="">
-            <div class="faculty">
-              <img class="img" />
-              <span>Aniq fanlar (texnika) yo'nalishi</span>
-            </div>
-          </a>
-          <a href="#">
-            <div class="faculty">
-              <img class="img" />
-              <span>Ijtimoiy-gumanitar fanlar yo'nalishi</span>
-            </div>
-          </a>
-          <a href="#">
-            <div class="faculty">
-              <img class="img" />
-              <span>Tabiiy fanlar yo'nalishi</span>
-            </div>
-          </a>
+          {% endfor %}
         </div>
         <div class="form">
           <button class="btn btn-primary mb-2">
@@ -95,6 +73,11 @@
         </div>
         {% endfor %}
       </div>
+      <div class="text-center">
+        <a href="{% url 'main:all_news' %}" class="btn btn-primary mt-2 float-end"
+          >Barchasini ko'rish</a
+        >
+      </div>
     </section>
     <section id="video_news" class="container mt-5">
       <div class="title-text mb-5">
@@ -115,6 +98,11 @@
 
         {% endfor %}
       </div>
+      <div class="text-center">
+        <a href="/all/news?type=primary" class="btn btn-primary mt-2 float-end"
+          >Barchasini ko'rish</a
+        >
+      </div>
     </section>
     <section id="law_news" class="container mt-5">
       <div class="title-text mb-5">
@@ -133,6 +121,11 @@
           </a>
         </div>
         {% endfor %}
+        <div class="text-center">
+          <a href="/all/news?type=triary" class="btn btn-primary mt-2 float-end"
+            >Barchasini ko'rish</a
+          >
+        </div>
       </div>
     </section>
     <section id="talenteds_news" class="container mt-5">
@@ -140,18 +133,23 @@
         <span>Iqtidorli talabalar</span>
       </div>
       <div class="row g-3">
-        {% for student in talented_students %}
+        {% for student in talanted_students %}
         <div class="col-sm-12 col-md-6 col-lg-3">
-          <a href="{%url 'main:student' student.id %}">
+          <a href="{%url 'main:best_student' student.id %}">
             <div class="card">
-              <img src="{% url student.img.url %}" />
+              <img src="{{student.img.url }}" />
               <div class="card-body">
-                <h5 class="card-title">{{ student.name }}</h5>
+                <h5 class="card-title">{{ student.fullname }}</h5>
               </div>
             </div>
           </a>
         </div>
         {% endfor %}
+      </div>
+      <div class="text-center">
+        <a href="{% url 'main:best_students' %}" class="btn btn-primary mt-2 float-end"
+          >Barchasini ko'rish</a
+        >
       </div>
     </section>
     <section id="e_books" class="container mt-5">
@@ -164,12 +162,21 @@
           <div class="card">
             <img src="{{ file.img.url }}" />
             <div class="card-body">
-              <h5 class="card-title">{{ file.title }}</h5>
-              <button class="btn btn-mini btn-primary mt-1">Yuklab olish</button>
+              <a href="{{file.file.url}}" class="text-black ">
+                <h5 class="card-title">{{ file.title }}</h5>
+              </a>
+              <a class="btn btn-primary mt-2 float-end" href="{{ file.file.url }}" download
+                >Yuklab olish</a
+              >
             </div>
           </div>
         </div>
         {% endfor %}
+      </div>
+      <div class="text-center">
+        <a href="{% url 'main:all_resourses' %}" class="btn btn-primary mt-2 float-end"
+          >Barchasini ko'rish</a
+        >
       </div>
     </section>
   </div>
