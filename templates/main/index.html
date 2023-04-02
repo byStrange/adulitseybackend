@@ -14,12 +14,12 @@
           {% endfor %}
         </div>
         <div class="form">
-          <button class="btn btn-primary mb-2">
+          <a class="btn btn-primary mb-2" href="{% url 'main:contact' %}">
             Akademik litsey direktoriga murojaat
-          </button>
-          <button class="btn btn-outline-secondary mb-2">
+          </a>
+          <a class="btn btn-outline-secondary mb-2" href="{% url 'main:contact_anonym' %}">
             Ta'lim sifatini yaxshilash yuzasidan murojaat yo'llang
-          </button>
+          </a>
           <div class="card p-2 bg-danger-subtle">
             <p>Korrupsion holatlarga duch kelganda murojaat uchun</p>
             <p>
