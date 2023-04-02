@@ -1,26 +1,30 @@
-{% extends 'main/base.html' %}
-{% block content %}
+{% extends 'main/base.html' %} {% block content %}
 <section class="container bg-body" id="faculty">
-    <div class="title-text text-center mt-2">
-      <span>{{ faculty.name }}</span>
-    </div>
-    {% for person in faculty.persons.all %}
-    <div class="person">
-        <center>
-          <div class="image">
-            <img src="{{ person.img.url }}" alt="" width="150"  />
-          </div>
-          <div class="info">
-            <b>{{ person.name }}</b>
-            <p><b>Telefon: </b><a href="{{ person.phone_number }}">{{ person.phone_number }}</a></p>
-          </div>
-        </center>
-        <div class="biography">
-          {{ person.biography.html|safe }}
-        </div>
+  <div class="title-text text-center mt-2">
+    <span>{{ faculty.name }}</span>
+  </div>
+  {% for person in faculty.persons.all %}
+  <div class="person">
+    <center>
+      <div class="image">
+        <img src="{{ person.img.url }}" alt="" width="150" />
       </div>
+      <div class="info">
+        <b>{{ person.name }}</b>
+        <p>
+          <b>Telefon: </b
+          ><a href="{{ person.phone_number }}">{{ person.phone_number }}</a>
+        </p>
+      </div>
+    </center>
+    <div class="biography">{{ person.biography.html|safe }}</div>
+  </div>
 
-    {% endfor %}    
+  {% endfor %}
 </section>
 
-  {% endblock%}
+{% endblock%}
+
+{% block title %}
+<title>{{  faculty.name }}</title>
+{% endblock title %}

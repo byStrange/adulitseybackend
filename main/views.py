@@ -38,8 +38,9 @@ def all_news(request):
     news_type = request.GET.get('type')
     news = models.NewsPost.objects.all()
     if news_type:
-        news = news.filter(news_type=news_type)        
+        news = news.filter(news_type=news_type)
     return render(request, 'main/all_news.html', {"news_posts": news})
+
 
 def all_resourses(request):
     resourses = models.UsefulResources.objects.all()
@@ -97,6 +98,7 @@ def best_student(request, pk):
 def gallery(request):
     gallery = models.Gallery.objects.first()
     return render(request, 'main/gallery.html', {"gallery": gallery})
+
 
 def leadership(request):
     return render(request, 'main/rahbariyat.html')

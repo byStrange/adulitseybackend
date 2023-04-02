@@ -1,5 +1,4 @@
-{% extends 'main/base.html'%}
-{% block content %}
+{% extends 'main/base.html'%} {% block content %}
 
 <section id="news" class="container mt-5">
   <div class="title-text mb-5">
@@ -10,11 +9,9 @@
     <div class="col-sm-12 col-md-6 col-lg-3">
       <a href="{% url 'main:single_post' post.id %}">
         <div class="card" style="overflow: hidden">
-          <img src="{{ post.little_image.url }}">
+          <img src="{{ post.little_image.url }}" />
           <div class="card-body">
-            <h5 class="card-title">
-              {{ post.title }}
-            </h5>
+            <h5 class="card-title">{{ post.title }}</h5>
           </div>
         </div>
       </a>

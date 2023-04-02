@@ -17,7 +17,7 @@
       id="navbar"
       style="
         background-color: rgba(255, 255, 255, 1);
-          box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
       "
     >
       <div class="container-fluid lg-justify-content-center">
@@ -60,7 +60,9 @@
                   <hr class="dropdown-divider" />
                 </li>
                 <li>
-                  <a class="dropdown-item" href="{% url 'main:leadership' %}">Rahbariyat</a>
+                  <a class="dropdown-item" href="{% url 'main:leadership' %}"
+                    >Rahbariyat</a
+                  >
                 </li>
                 <li>
                   <a class="dropdown-item" href="about.html">Ma'muriyat</a>
@@ -83,7 +85,9 @@
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="{% url 'main:contact_anonym' %}"
+                  <a
+                    class="dropdown-item"
+                    href="{% url 'main:contact_anonym' %}"
                     >Anonim murojaat</a
                   >
                 </li>
@@ -117,10 +121,14 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a href="{% url 'main:gallery' %}" class="nav-link">Fotogalareya</a>
+              <a href="{% url 'main:gallery' %}" class="nav-link"
+                >Fotogalareya</a
+              >
             </li>
             <li class="nav-item">
-              <a href="{% url 'main:all_news'%}" class="nav-link">Yangiliklar</a>
+              <a href="{% url 'main:all_news'%}" class="nav-link"
+                >Yangiliklar</a
+              >
             </li>
           </ul>
         </div>
@@ -156,7 +164,11 @@
                 <a href="#" class="nav-link p-0 text-muted">Manzilimiz</a>
               </li>
               <li class="nav-item mb-2">
-                <a href="{% url 'main:leadership' %}" class="nav-link p-0 text-muted">Rahbariyat</a>
+                <a
+                  href="{% url 'main:leadership' %}"
+                  class="nav-link p-0 text-muted"
+                  >Rahbariyat</a
+                >
               </li>
               <li class="nav-item mb-2">
                 <a href="#" class="nav-link p-0 text-muted">Ma'muriyat</a>
@@ -173,7 +185,9 @@
                 <a href="#" class="nav-link p-0 text-muted">Blok test</a>
               </li>
               <li class="nav-item mb-2">
-                <a href="{% url 'main:all_resourses' %}" class="nav-link p-0 text-muted"
+                <a
+                  href="{% url 'main:all_resourses' %}"
+                  class="nav-link p-0 text-muted"
                   >Foydali resurslar</a
                 >
               </li>
@@ -183,13 +197,25 @@
           <div class="col-6 col-md-2 mb-3">
             <ul class="nav flex-column">
               <li class="nav-item mb-2">
-                <a href="{% url 'main:contact_anonym' %}" class="nav-link p-0 text-muted">Bog'lanish</a>
+                <a
+                  href="{% url 'main:contact_anonym' %}"
+                  class="nav-link p-0 text-muted"
+                  >Bog'lanish</a
+                >
               </li>
               <li class="nav-item mb-2">
-                <a href="{% url 'main:all_news' %}" class="nav-link p-0 text-muted">Yangiliklar</a>
+                <a
+                  href="{% url 'main:all_news' %}"
+                  class="nav-link p-0 text-muted"
+                  >Yangiliklar</a
+                >
               </li>
               <li class="nav-item mb-2">
-                <a href="{% url 'main:gallery' %}" class="nav-link p-0 text-muted">Fotogalareya</a>
+                <a
+                  href="{% url 'main:gallery' %}"
+                  class="nav-link p-0 text-muted"
+                  >Fotogalareya</a
+                >
               </li>
             </ul>
           </div>

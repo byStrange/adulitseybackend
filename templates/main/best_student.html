@@ -1,18 +1,18 @@
-{% extends 'main/base.html' %} 
- {% block content %}
+{% extends 'main/base.html' %} {% block content %}
 <section class="container bg-body" id="adminstration">
   <div class="title-text text-center mt-2">
     <span>{{ student.fullname }}</span>
   </div>
   <div class="image">
     <center>
-      <img src="{{ student.img.url }}" alt="{{student.title}}" style="max-width: 100%" />
+      <img
+        src="{{ student.img.url }}"
+        alt="{{student.title}}"
+        style="max-width: 100%"
+      />
     </center>
   </div>
-  <div class="content">
-    {{ student.biography.html|safe }}
-  </div>
+  <div class="content">{{ student.biography.html|safe }}</div>
 </section>
-{% endblock %} 
-
-{% block title %} <title>{{ student.fullname }}</title> {% endblock title %}
+{% endblock %} {% block title %} <title>{{ student.fullname }}</title> {%
+endblock title %}

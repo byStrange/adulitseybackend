@@ -8,7 +8,7 @@ urlpatterns = [
     path('', views.index, name="Index"),
     path('all/news', views.all_news, name="all_news"),
     path('news/<int:pk>', views.single_news_post,
-         name="single_post"), 
+         name="single_post"),
     path('contact', views.contact, name='contact'),
     path('contact-anonym', views.contact_anonym, name='contact_anonym'),
     path("faculty/<int:pk>", views.faculty_view, name="faculty"),
@@ -16,6 +16,8 @@ urlpatterns = [
     path("best-students/<int:pk>", views.best_student, name="best_student"),
     path('all/resourses', views.all_resourses, name='all_resourses'),
     path('gallery', views.gallery, name='gallery'),
-    path('leadership', lambda request: render(request, 'main/about_leaders.html'), name='leadership'),
-    path('about', lambda request: render(request, 'main/about.html'), name='about'),
+    path('leadership', lambda request: render(
+        request, 'main/about_leaders.html'), name='leadership'),
+    path('about', lambda request: render(
+        request, 'main/about.html'), name='about'),
 ]

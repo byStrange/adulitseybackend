@@ -1,5 +1,4 @@
-{% extends 'main/base.html' %} 
- {% block content %}
+{% extends 'main/base.html' %} {% block content %}
 <section class="container bg-body" id="adminstration">
   <div class="title-text text-center mt-2">
     <span>{{ post.title }}</span>
@@ -7,17 +6,20 @@
   <div class="image">
     <center>
       {% if post.news_type == 'secondary'%}
-      <img src="{{ post.big_image.url }}" alt="{{post.title}}" style="max-width: 100%" />
+      <img
+        src="{{ post.big_image.url }}"
+        alt="{{post.title}}"
+        style="max-width: 100%"
+      />
       {% elif post.news_type == 'primary' %}
       <video controls style="max-width: 100%">
-        <source src="{{ post.video.url }}" type="{{ post.video.type }}">
+        <source src="{{ post.video.url }}" type="{{ post.video.type }}" />
       </video>
       {% endif %}
     </center>
   </div>
-  <div class="content">
-    {{ post.body.html|safe }}
-  </div>
+  <div class="content">{{ post.body.html|safe }}</div>
 </section>
-{% endblock%}
-{% comment %} {% endblock %} {% block title %} {{ post.title }} {% endblock title %} {% endcomment %}
+{% endblock%} {% block title %}
+<title>{{ post.title }}</title>
+{% endblock title %}

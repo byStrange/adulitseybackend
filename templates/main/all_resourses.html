@@ -1,5 +1,4 @@
-{% extends 'main/base.html'%}
-{% block content %}
+{% extends 'main/base.html'%} {% block content %}
 
 <section id="news" class="container mt-5">
   <div class="title-text mb-5">
@@ -11,10 +10,13 @@
       <div class="card">
         <img src="{{ file.img.url }}" />
         <div class="card-body">
-          <a href="{{file.file.url}}" class="text-black ">
+          <a href="{{file.file.url}}" class="text-black">
             <h5 class="card-title">{{ file.title }}</h5>
           </a>
-          <a class="btn btn-primary mt-2 float-end" href="{{ file.file.url }}" download
+          <a
+            class="btn btn-primary mt-2 float-end"
+            href="{{ file.file.url }}"
+            download
             >Yuklab olish</a
           >
         </div>
@@ -25,5 +27,5 @@
 </section>
 
 {% endblock %} {% block title %}
-<title>Barcha Elektron resources</title>
+<title>Barcha Elektron resurslar</title>
 {% endblock title %}

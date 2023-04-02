@@ -4,7 +4,7 @@
     <div class="row" id="hero">
       <div class="col-md-12 col-lg-4">
         <div class="row flex-column faculties">
-          {% for faculty in faculties %} 
+          {% for faculty in faculties %}
           <a href="{% url 'main:faculty' faculty.id%}">
             <div class="faculty">
               <img class="img" alt="" />
@@ -74,7 +74,9 @@
         {% endfor %}
       </div>
       <div class="text-center">
-        <a href="{% url 'main:all_news' %}" class="btn btn-primary mt-2 float-end"
+        <a
+          href="{% url 'main:all_news' %}"
+          class="btn btn-primary mt-2 float-end"
           >Barchasini ko'rish</a
         >
       </div>
@@ -147,7 +149,9 @@
         {% endfor %}
       </div>
       <div class="text-center">
-        <a href="{% url 'main:best_students' %}" class="btn btn-primary mt-2 float-end"
+        <a
+          href="{% url 'main:best_students' %}"
+          class="btn btn-primary mt-2 float-end"
           >Barchasini ko'rish</a
         >
       </div>
@@ -162,10 +166,13 @@
           <div class="card">
             <img src="{{ file.img.url }}" />
             <div class="card-body">
-              <a href="{{file.file.url}}" class="text-black ">
+              <a href="{{file.file.url}}" class="text-black">
                 <h5 class="card-title">{{ file.title }}</h5>
               </a>
-              <a class="btn btn-primary mt-2 float-end" href="{{ file.file.url }}" download
+              <a
+                class="btn btn-primary mt-2 float-end"
+                href="{{ file.file.url }}"
+                download
                 >Yuklab olish</a
               >
             </div>
@@ -174,11 +181,15 @@
         {% endfor %}
       </div>
       <div class="text-center">
-        <a href="{% url 'main:all_resourses' %}" class="btn btn-primary mt-2 float-end"
+        <a
+          href="{% url 'main:all_resourses' %}"
+          class="btn btn-primary mt-2 float-end"
           >Barchasini ko'rish</a
         >
       </div>
     </section>
   </div>
 </main>
-{% endblock content %}
+{% endblock content %} {% block title %}
+<title>ADU akademik litseyi.</title>
+{% endblock title %}

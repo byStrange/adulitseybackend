@@ -4,7 +4,12 @@
   <div class="title-text text-center mt-2">
     <span>Rektorga murojaat</span>
   </div>
-  <form class="row" method="POST" action="{% url 'main:contact' %}" id="contact_form">
+  <form
+    class="row"
+    method="POST"
+    action="{% url 'main:contact' %}"
+    id="contact_form"
+  >
     {% csrf_token %}
     <div class="col-lg-6 col-md-6 col-sm-12">
       <div class="mt-3">
@@ -141,4 +146,6 @@
   </form>
 </section>
 
-{% endblock %}
+{% endblock %} {% block title %}
+<title>Rahbarga murojaat</title>
+{% endblock title %}
