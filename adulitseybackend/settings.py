@@ -25,7 +25,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
-    'django_quill'
+    'django_quill',
+    'multiselectfield',
 ]
 
 MIDDLEWARE = [

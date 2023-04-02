@@ -92,3 +92,11 @@ def best_students(request):
 def best_student(request, pk):
     student = models.TalentedStudent.objects.get(pk=pk)
     return render(request, 'main/best_student.html', {"student": student})
+
+
+def gallery(request):
+    gallery = models.Gallery.objects.first()
+    return render(request, 'main/gallery.html', {"gallery": gallery})
+
+def leadership(request):
+    return render(request, 'main/rahbariyat.html')

@@ -1,5 +1,6 @@
 from django.db import models
 from django_quill.fields import QuillField
+from multiselectfield import MultiSelectField
 
 # Create your models here.
 
@@ -94,18 +95,25 @@ class AnonymousContact(models.Model):
 
 
 class GalleryItem(models.Model):
+    CHOICES = (
+        ('grid-item--width2', 'uzunlik 2'),
+        ('grid-item--width3', 'uzunlik 3'),
+        ('grid-item--height2', 'balandlik 2'),
+        ('grid-item--height3', 'balandlik 3'),
+    )
     image = models.ImageField(upload_to='media/gallery')
     summary = models.CharField(max_length=255)
+    size = MultiSelectField(choices=CHOICES, max_length=255, max_choices=3, blank=True, null=True)
 
     def __str__(self):
-        return self.title
+        return self.summary 
 
 
 class Gallery(models.Model):
     items = models.ManyToManyField(GalleryItem)
 
     def __str__(self):
-        return self.items.__len__()
+        return str(self.items.count())
 
     class Meta:
         verbose_name_plural = 'Gallaries'

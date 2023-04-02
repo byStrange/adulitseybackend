@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from django.shortcuts import render
 
 app_name = "main"
 
@@ -14,4 +15,7 @@ urlpatterns = [
     path("all/best-students", views.best_students, name="best_students"),
     path("best-students/<int:pk>", views.best_student, name="best_student"),
     path('all/resourses', views.all_resourses, name='all_resourses'),
+    path('gallery', views.gallery, name='gallery'),
+    path('leadership', lambda request: render(request, 'main/about_leaders.html'), name='leadership'),
+    path('about', lambda request: render(request, 'main/about.html'), name='about'),
 ]
