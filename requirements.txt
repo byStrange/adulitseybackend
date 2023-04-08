@@ -1,0 +1,3 @@
+django
+django_quill_editor
+django-multiselectfield
