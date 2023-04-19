@@ -84,3 +84,9 @@ body {
 .card {
   max-width: 500px;
 }
+
+@media screen and (max-width: 991px) {
+  .caret-parent .caret{
+    display:  none !important;
+  }
+}
