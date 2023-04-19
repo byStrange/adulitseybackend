@@ -20,14 +20,14 @@
   </div>
 </section>
 <script>
-  var title_Text= document.querySelector('.title-text');
+  var titleText= document.querySelector('.title-text');
   // if param called type in windows is primary then do smth
   if (window.location.href.indexOf('type=primary') > -1) {
-    title_Text.innerText = 'Video yangiliklar';
+    titleText.innerText = 'Video yangiliklar';
   }  else if (window.location.href.indexOf('type=secondary') > -1) {
-    title_Text.innerText = 'Foto yangiliklar';
+    titleText.innerText = 'Foto yangiliklar';
   } else if (window.location.href.indexOf('type=triary') > -1) {
-    title_Text.innerText = 'Qonunchilikdagi yangiliklar';
+    titleText.innerText = 'Qonunchilikdagi yangiliklar';
   }
 </script>
 
