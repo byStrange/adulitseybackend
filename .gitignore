@@ -22,6 +22,8 @@ media/
 # Ignore database files
 *.sqlite3
 
+uploads
+
 # Ignore IDE files
 .idea/
 .vscode/
