@@ -1,8 +1,8 @@
 {% extends 'main/base.html' %} {% block content %}
 
-<section id="contact" class="container bg-body">
+<section id="contact" class="container bg-body py-2 rounded">
   <div class="title-text text-center mt-2">
-    <span>Rektorga murojaat</span>
+    <span>Direktorga murojaat</span>
   </div>
   <form
     class="row"
@@ -13,7 +13,7 @@
     {% csrf_token %}
     <div class="col-lg-6 col-md-6 col-sm-12">
       <div class="mt-3">
-        <label for="summary">Murojaat mamuni</label>
+        <label for="summary">Murojaat mazmuni</label>
         <div class="input-group">
           <textarea
             name="summary"

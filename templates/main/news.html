@@ -9,7 +9,7 @@
       <img
         src="{{ post.big_image.url }}"
         alt="{{post.title}}"
-        style="max-width: 100%"
+        style="max-width: 100%; width: 800px; height: 500px; object-fit: cover;"
       />
       {% elif post.news_type == 'primary' %}
       <video controls style="max-width: 100%">
@@ -18,7 +18,20 @@
       {% endif %}
     </center>
   </div>
-  <div class="content">{{ post.body.html|safe }}</div>
+  <div class="content">
+    {% if not post.news_type == 'primary' %} {% for image in post.body.all %}
+    <p class="mt-1">{{ image.summary }}</p>
+    <img src="{{image.image.url}}" alt="{{ image.summary }}" />
+    {% endfor %} {% endif %}
+    {% if post.more %}
+      <div class="more mt-3"> 
+        {{ post.more|safe }}
+      </div>
+    {% endif %}
+    {% if post.attached_file %}
+      <a class="btn btn-primary my-2" download href="{{ post.attached_file.url }}">Yuklab olish</a>
+    {% endif %}
+  </div>
 </section>
 {% endblock%} {% block title %}
 <title>{{ post.title }}</title>
