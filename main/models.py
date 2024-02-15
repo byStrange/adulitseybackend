@@ -10,6 +10,7 @@ class NewsPost(models.Model):
         ("primary", "Video"),
         ("secondary", "Foto"),
         ("triary", "Qonunchilik"),
+        ("best_student", "Iqtidorli talaba")
     )
     title = models.CharField(max_length=255)
     little_image = models.ImageField(upload_to="media/news_post/")
