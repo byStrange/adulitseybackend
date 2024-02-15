@@ -6,8 +6,6 @@ from . import forms
 
 def index(request):
     news_posts = models.NewsPost.objects.all()
-
-
     video_posts = models.NewsPost.objects.filter(news_type="primary")
     photo_posts =  models.NewsPost.objects.filter(news_type="secondary")
     legislation_posts = models.NewsPost.objects.filter(news_type="triary")
