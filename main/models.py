@@ -98,15 +98,17 @@ class GalleryItem(models.Model):
         ("grid-item--width3", "uzunlik 3"),
         ("grid-item--height2", "balandlik 2"),
         ("grid-item--height3", "balandlik 3"),
+
     )
     image = models.ImageField(upload_to="media/gallery")
-    summary = models.CharField(max_length=255)
+    summary = models.CharField(max_length=255, blank=True)
     size = MultiSelectField(
         choices=CHOICES, max_length=255, max_choices=3, blank=True, null=True
     )
 
     def __str__(self):
-        return self.summary
+        return self.image.name
+
 
 
 class Gallery(models.Model):

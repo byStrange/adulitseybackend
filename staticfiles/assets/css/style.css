@@ -1,0 +1,98 @@
+@import url("defaults.css");
+@import url("root.css");
+@import url('fonts.css');
+
+.navbar {
+  background-color: #fff;
+}
+
+.navbar-nav.caret-parent {
+  position: relative;
+}
+
+.navbar-nav.caret-parent .caret {
+  height: 3px;
+  background: #505050;
+  position: absolute;
+  bottom: 0;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.navbar-nav.caret-parent:hover .caret {
+  opacity: 1;
+}
+
+.nav-item.active {
+  position: relative;
+}
+
+.nav-item.active::after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: 0;
+  height: 3px;
+  background-color: #505050;
+  width: calc(100% - 16px);
+}
+
+body {
+  background-color: #f9f9f9;
+}
+
+#hero .splide__slide .info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 5px 10px;
+  background-color: #283148;
+  color: #fff;
+  font-size: 150%;
+  display: flex;
+  flex-direction: column;
+}
+
+.faculties a {
+  color: #000;
+  text-decoration: none;
+  transition: 250ms;
+}
+
+.faculties a:hover {
+  color: var(--color-primary);
+}
+
+.faculty {
+  display: flex;
+  padding: 20px 0;
+  font-size: 24px;
+}
+
+.btn.btn-default {
+  background: var(--color-secondary);
+  color: #fff;
+}
+
+:is(.container, .container-fluid) .title-text {
+  font-size: 34px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.card img {
+    height: 167px;
+    object-fit: cover;
+}
+
+.card {
+  max-width: 500px;
+}
+
+.card-body h5 {
+    	overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+}
