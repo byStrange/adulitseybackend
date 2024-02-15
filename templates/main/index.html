@@ -55,7 +55,8 @@
         </section>
       </div>
     </div>
-    <section id="news" class="container mt-5">
+   {% if secondary %}
+     <section id="news" class="container mt-5">
       <div class="title-text mb-5">
         <span>So'ngi yangiliklar</span>
       </div>
@@ -81,12 +82,14 @@
         >
       </div>
     </section>
+    {% endif %}
+    {% if primary %}
     <section id="video_news" class="container mt-5">
       <div class="title-text mb-5">
         <span>Video yangiliklar</span>
       </div>
       <div class="row g-3">
-        {% for post in primary %}
+        {% for post in primary:slice:':8' %}
         <div class="col-sm-12 col-md-6 col-lg-3">
           <a href="{% url 'main:single_post' post.id %}">
             <div class="card">
@@ -106,12 +109,14 @@
         >
       </div>
     </section>
+    {% endif %}
+   {% if triary  %}
     <section id="law_news" class="container mt-5">
       <div class="title-text mb-5">
         <span>Qonunchilikdagi yangiliklar</span>
       </div>
       <div class="row g-3">
-        {% for post in triary %}
+        {% for post in triary:slice:':8' %}
         <div class="col-sm-12 col-md-6 col-lg-3">
           <a href="{%url 'main:single_post' post.id %}">
             <div class="card">
@@ -130,12 +135,14 @@
         </div>
       </div>
     </section>
+    {% endif %}
+   {% if talanted_students %}
     <section id="talenteds_news" class="container mt-5">
       <div class="title-text mb-5">
         <span>Iqtidorli talabalar</span>
       </div>
       <div class="row g-3">
-        {% for student in talanted_students %}
+        {% for student in talanted_students:slice:':8' %}
         <div class="col-sm-12 col-md-6 col-lg-3">
           <a href="{%url 'main:best_student' student.id %}">
             <div class="card">
@@ -156,12 +163,14 @@
         >
       </div>
     </section>
-    <section id="e_books" class="container mt-5">
+    {% endif %}
+ {% if useful_resources %}
+       <section id="e_books" class="container mt-5">
       <div class="title-text mb-5">
         <span>Elektron resurslar</span>
       </div>
       <div class="row g-3">
-        {% for file in useful_resources %}
+        {% for file in useful_resources:slice:':8' %}
         <div class="col-sm-12 col-md-6 col-lg-3">
           <div class="card">
             <img src="{{ file.img.url }}" />
@@ -188,6 +197,7 @@
         >
       </div>
     </section>
+    {% endif %}
   </div>
 </main>
 {% endblock content %} {% block title %}
