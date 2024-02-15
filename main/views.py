@@ -6,29 +6,22 @@ from . import forms
 
 def index(request):
     news_posts = models.NewsPost.objects.all()
-    primary, secondary, triatery = [], [], []
-    for post in news_posts:
-        if post.news_type == 'primary':
-            primary.append(post)
-        elif post.news_type == 'secondary':
-            secondary.append(post)
-        elif post.news_type == 'triary':
-            triatery.append(post)
+
+    video_posts = models.NewsPost.objects.filter(news_type="primary")
+    photo_posts =  models.NewsPost.objects.filter(news_type="secondary")
+    legislation_posts = models.NewsPost.objects.filter(news_type="triary")
+    best_students_posts = models.NewsPost.objects.filter(news_type="best_student")
 
     useful_resources = models.UsefulResources.objects.all()
-    talanted_students = models.TalentedStudent.objects.all()
     faculties = models.Faculty.objects.all()
-
-    for i in talanted_students:
-        print(i)
 
     objects = {
         "news_posts": news_posts,
-        "primary": primary,
-        "secondary": secondary,
-        "triary": triatery,
+        "primary": video_posts,
+        "secondary": photo_posts,
+        "triary":legislation_posts,
         "useful_resources": useful_resources,
-        "talanted_students": talanted_students,
+        "talanted_students": best_students_posts,
         "faculties": faculties
     }
     return render(request, 'main/index.html', objects)
