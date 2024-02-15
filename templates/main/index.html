@@ -89,7 +89,7 @@
         <span>Video yangiliklar</span>
       </div>
       <div class="row g-3">
-        {% for post in primary:slice:':8' %}
+        {% for post in primary|slice:':8' %}
         <div class="col-sm-12 col-md-6 col-lg-3">
           <a href="{% url 'main:single_post' post.id %}">
             <div class="card">
@@ -116,7 +116,7 @@
         <span>Qonunchilikdagi yangiliklar</span>
       </div>
       <div class="row g-3">
-        {% for post in triary:slice:':8' %}
+        {% for post in triary|slice:':8' %}
         <div class="col-sm-12 col-md-6 col-lg-3">
           <a href="{%url 'main:single_post' post.id %}">
             <div class="card">
@@ -142,7 +142,7 @@
         <span>Iqtidorli talabalar</span>
       </div>
       <div class="row g-3">
-        {% for student in talanted_students:slice:':8' %}
+        {% for student in talanted_students|slice:':8' %}
         <div class="col-sm-12 col-md-6 col-lg-3">
           <a href="{%url 'main:best_student' student.id %}">
             <div class="card">
@@ -170,7 +170,7 @@
         <span>Elektron resurslar</span>
       </div>
       <div class="row g-3">
-        {% for file in useful_resources:slice:':8' %}
+        {% for file in useful_resources|slice:':8' %}
         <div class="col-sm-12 col-md-6 col-lg-3">
           <div class="card">
             <img src="{{ file.img.url }}" />
