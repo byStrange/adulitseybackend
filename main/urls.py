@@ -20,4 +20,5 @@ urlpatterns = [
         request, 'main/about_leaders.html'), name='leadership'),
     path('about', lambda request: render(
         request, 'main/about.html'), name='about'),
+    path("block-test/", lambda request: render(request, 'main/block-test.html'), name="blok_test")
 ]

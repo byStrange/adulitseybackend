@@ -1,6 +1,6 @@
 @import url("defaults.css");
 @import url("root.css");
-@import url('fonts.css');
+@import url("fonts.css");
 
 .navbar {
   background-color: #fff;
@@ -82,8 +82,8 @@ body {
 }
 
 .card img {
-    height: 167px;
-    object-fit: cover;
+  height: 167px;
+  object-fit: cover;
 }
 
 .card {
@@ -91,8 +91,14 @@ body {
 }
 
 .card-body h5 {
-    	overflow: hidden;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+@media screen and (max-width: 991px) {
+  .caret-parent .caret {
+    display: none !important;
+  }
 }

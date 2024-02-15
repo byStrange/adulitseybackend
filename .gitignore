@@ -22,10 +22,11 @@ media/
 # Ignore database files
 *.sqlite3
 
+uploads
+
 # Ignore IDE files
 .idea/
 .vscode/
 
 # Ignore python cache folder
-**/__pycache__/%                                                                
-
+**/__pycache__/
