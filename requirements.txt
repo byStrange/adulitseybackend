@@ -1,4 +1,4 @@
 django
-django_quill_editor
 django-multiselectfield
 pillow
+django-ckeditor

@@ -1,24 +1,28 @@
 from django.db import models
-from django_quill.fields import QuillField
 from multiselectfield import MultiSelectField
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 
 
 class NewsPost(models.Model):
     NEWS_TYPE_CHOICES = (
-        ('primary', 'Video'),
-        ('secondary', 'Foto'),
-        ('triary', 'Qonunchilik'),
-        ('best_student', 'Iqtidorli talaba')
+        ("primary", "Video"),
+        ("secondary", "Foto"),
+        ("triary", "Qonunchilik"),
+        ("best_student", "Iqtidorli talaba")
     )
     title = models.CharField(max_length=255)
     little_image = models.ImageField(upload_to="media/news_post/")
-    big_image = models.ImageField(upload_to='media/news_post/')
-    video = models.FileField(upload_to='media/news_post/', blank=True, null=True)
+    big_image = models.ImageField(upload_to="media/news_post/")
+    attached_file = models.FileField(
+        upload_to="media/news_post/attached_files/", blank=True)
+    video = models.FileField(
+        upload_to="media/news_post/", blank=True, null=True)
     news_type = models.CharField(choices=NEWS_TYPE_CHOICES, max_length=255)
-    body = QuillField()
+    body = models.ManyToManyField("GalleryItem", blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    more = RichTextField(blank=True, null=True)
 
     def __str__(self):
         return self.title
@@ -26,9 +30,9 @@ class NewsPost(models.Model):
 
 class Person(models.Model):
     name = models.CharField(max_length=255)
-    img = models.ImageField(upload_to='media/person_pictures')
+    img = models.ImageField(upload_to="media/person_pictures")
     phone_number = models.CharField(max_length=255)
-    biography = QuillField()
+    biography = RichTextField()
 
     def __str__(self):
         return self.name
@@ -42,33 +46,27 @@ class Faculty(models.Model):
         return self.name
 
     class Meta:
-        verbose_name_plural = 'Faculties'
+        verbose_name_plural = "Faculties"
+
 
 class TalentedStudent(models.Model):
     fullname = models.CharField(max_length=255)
-    img = models.ImageField(upload_to='media/talented_students')
+    img = models.ImageField(upload_to="media/talented_students")
     phone_number = models.CharField(max_length=255)
-    biography = QuillField()
+    biography = RichTextField()
 
     def __str__(self):
         return self.fullname
 
     class Meta:
-        verbose_name_plural = 'Talented Students'
+        verbose_name_plural = "Talented Students"
 
 
 class RectorContact(models.Model):
-    STATUS_CHOICES = (
-        ('js', 'Jismoniy shaxs'),
-        ('ys', 'Yuridik shaxs')
-
-    )
+    STATUS_CHOICES = (("js", "Jismoniy shaxs"), ("ys", "Yuridik shaxs"))
 
     CONTACT_TYPE_CHOICES = (
-        ('m', 'Murojaat'),
-        ('sh', 'Shikoyat'),
-        ('t', 'Taklif')
-    )
+        ("m", "Murojaat"), ("sh", "Shikoyat"), ("t", "Taklif"))
     summary = models.CharField(max_length=500)
     text = models.TextField()
     name = models.CharField(max_length=255)
@@ -97,17 +95,21 @@ class AnonymousContact(models.Model):
 
 class GalleryItem(models.Model):
     CHOICES = (
-        ('grid-item--width2', 'uzunlik 2'),
-        ('grid-item--width3', 'uzunlik 3'),
-        ('grid-item--height2', 'balandlik 2'),
-        ('grid-item--height3', 'balandlik 3'),
+        ("grid-item--width2", "uzunlik 2"),
+        ("grid-item--width3", "uzunlik 3"),
+        ("grid-item--height2", "balandlik 2"),
+        ("grid-item--height3", "balandlik 3"),
+
     )
-    image = models.ImageField(upload_to='media/gallery')
-    summary = models.CharField(max_length=255)
-    size = MultiSelectField(choices=CHOICES, max_length=255, max_choices=3, blank=True, null=True)
+    image = models.ImageField(upload_to="media/gallery")
+    summary = models.CharField(max_length=255, blank=True)
+    size = MultiSelectField(
+        choices=CHOICES, max_length=255, max_choices=3, blank=True, null=True
+    )
 
     def __str__(self):
-        return self.summary 
+        return self.image.name
+
 
 
 class Gallery(models.Model):
@@ -117,13 +119,14 @@ class Gallery(models.Model):
         return str(self.items.count())
 
     class Meta:
-        verbose_name_plural = 'Gallaries'
+        verbose_name_plural = "Gallaries"
 
 
 class UsefulResources(models.Model):
     title = models.CharField(max_length=255)
-    file = models.FileField(upload_to='media/useful_resources')
-    img = models.ImageField(upload_to='media/useful_resources', blank=True, null=True)
+    file = models.FileField(upload_to="media/useful_resources")
+    img = models.ImageField(
+        upload_to="media/useful_resources", blank=True, null=True)
     link = models.URLField(blank=True, null=True)
     summary = models.CharField(max_length=255)
 
@@ -131,4 +134,4 @@ class UsefulResources(models.Model):
         return self.title
 
     class Meta:
-        verbose_name_plural = 'Useful Resources'
+        verbose_name_plural = "Useful Resources"

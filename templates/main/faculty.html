@@ -17,14 +17,12 @@
         </p>
       </div>
     </center>
-    <div class="biography">{{ person.biography.html|safe }}</div>
+    <div class="biography">{{ person.biography|safe }}</div>
   </div>
 
   {% endfor %}
 </section>
 
-{% endblock%}
-
-{% block title %}
-<title>{{  faculty.name }}</title>
+{% endblock%} {% block title %}
+<title>{{ faculty.name }}</title>
 {% endblock title %}
