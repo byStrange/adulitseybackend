@@ -78,12 +78,12 @@ def faculty_view(request, pk):
 
 
 def best_students(request):
-    students = models.TalentedStudent.objects.all()
+    students = models.NewsPost.objects.filter(news_type="best_student")
     return render(request, 'main/best_students.html', {"students": students})
 
 
 def best_student(request, pk):
-    student = models.TalentedStudent.objects.get(pk=pk)
+    students = models.NewsPost.objects.get(news_type="best_student", pk=pk)
     return render(request, 'main/best_student.html', {"student": student})
 
 
