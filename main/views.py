@@ -94,3 +94,6 @@ def gallery(request):
 
 def leadership(request):
     return render(request, 'main/rahbariyat.html')
+
+def block_test(request):
+    return render(request, 'main/block-test.html')
