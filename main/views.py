@@ -82,6 +82,7 @@ def best_students(request):
     return render(request, 'main/best_students.html', {"students": students})
 
 
+
 def best_student(request, pk):
     students = models.NewsPost.objects.get(news_type="best_student", pk=pk)
     return render(request, 'main/best_student.html', {"student": student})
@@ -94,3 +95,6 @@ def gallery(request):
 
 def leadership(request):
     return render(request, 'main/rahbariyat.html')
+ 
+def block_test(request):
+    return render(request, 'main/block-test.html')
